@@ -1,0 +1,282 @@
+.contact-panel .contact-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: stretch;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  justify-items: center;
+  gap: clamp(18px, 3vh, 30px);
+  width: min(100%, 900px);
+  margin: 0 auto;
+  padding: 24px 0;
+  pointer-events: auto;
+  text-align: center;
+}
+
+.contact-panel .contact-copy {
+  width: min(100%, 760px);
+  text-align: left;
+}
+
+.contact-panel .contact-copy .panel-kicker {
+  margin-bottom: 10px;
+}
+
+.contact-panel .contact-copy h1 {
+  max-width: none;
+  margin-bottom: 12px;
+  font-size: clamp(40px, 6vw, 64px);
+}
+
+.contact-panel .contact-copy > p:not(.panel-kicker) {
+  max-width: none;
+  margin: 0;
+  color: #e2e0e7;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-self: center;
+  gap: 24px;
+  width: min(100%, 760px);
+  transform: translateY(clamp(144px, 24vh, 240px));
+}
+
+.contact-method {
+  display: flex;
+  min-width: 0;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 16px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 3px;
+  color: #fff;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 95%);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.contact-method__label {
+  color: #ffd34d;
+}
+
+.contact-method--email {
+  cursor: text;
+}
+
+.contact-method--email .contact-method__label {
+  color: #ea4335;
+}
+
+.contact-method--email:hover {
+  transform: none;
+  border-color: rgb(255 255 255 / 24%);
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-method[href^="https://wa.me/"] {
+  color: #fff;
+}
+
+.contact-method[href^="https://wa.me/"] .contact-method__label {
+  color: #25d366;
+}
+
+.contact-method:hover {
+  transform: translateY(-2px);
+  border-color: #ffd34d;
+  background: rgb(255 211 77 / 8%);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 20%);
+}
+
+.contact-method:focus-visible,
+.contact-panel .contact-social__link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.contact-social {
+  display: flex;
+  align-self: end;
+  width: min(100%, 760px);
+  align-items: stretch;
+  justify-content: space-around;
+  gap: clamp(24px, 7vw, 76px);
+  padding: 10px 18px;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 8px;
+  background: rgb(5 5 6 / 78%);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 28%);
+}
+
+.contact-panel .contact-social__link {
+  display: flex;
+  min-width: 96px;
+  min-height: 76px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+.contact-panel .contact-social__link svg {
+  display: block;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 auto;
+  padding: 9px;
+  border: 1px solid rgb(255 211 77 / 42%);
+  border-radius: 50%;
+  background: rgb(5 5 6 / 72%);
+  fill: currentColor;
+  filter: drop-shadow(0 2px 8px rgb(0 0 0 / 45%));
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    background-color 250ms ease;
+}
+
+.contact-panel .contact-social__link:first-child svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.contact-panel .contact-social__link:first-child .contact-social__icon-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.contact-panel .contact-social__link:hover {
+  transform: translateY(-3px);
+  color: #ffd34d;
+}
+
+.contact-panel .contact-social__link:hover svg {
+  transform: scale(1.08);
+  border-color: #ffd34d;
+  background: rgb(255 211 77 / 12%);
+}
+
+@media (max-width: 700px) {
+  .contact-panel .contact-layout {
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .contact-panel .contact-copy h1 {
+    margin-bottom: 8px;
+    font-size: clamp(36px, 9vw, 48px);
+  }
+
+  .contact-panel .contact-copy > p:not(.panel-kicker) {
+    font-size: 14px;
+  }
+
+  .contact-methods {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .contact-social {
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .contact-method {
+    min-height: 52px;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .contact-social {
+    gap: 2px;
+  }
+
+  .contact-panel .contact-social__link {
+    min-height: 60px;
+    flex-direction: column;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .contact-panel .contact-social__link svg {
+    width: 38px;
+    height: 38px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 700px) and (max-height: 740px) {
+  .contact-panel .contact-layout {
+    gap: 10px;
+    padding: 8px 0;
+  }
+
+  .contact-panel .contact-copy .panel-kicker {
+    margin-bottom: 6px;
+  }
+
+  .contact-panel .contact-copy h1 {
+    margin-bottom: 5px;
+    font-size: 34px;
+  }
+
+  .contact-panel .contact-methods {
+    gap: 5px;
+  }
+
+  .contact-panel .contact-method {
+    min-height: 44px;
+    padding: 7px 10px;
+  }
+
+  .contact-panel .contact-social {
+    gap: 0;
+  }
+
+  .contact-panel .contact-social__link {
+    min-height: 40px;
+    padding: 4px 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-method,
+  .contact-panel .contact-social__link,
+  .contact-panel .contact-social__link svg {
+    transition: none;
+  }
+}
